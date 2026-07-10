@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.env
+*.sqlite
+test_recovery_checkpoints.sqlite
