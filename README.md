@@ -1,5 +1,7 @@
 # Aegis Agent DAG
 
+![CI](https://github.com/sisodiyaanand/aegis-agent-dag/actions/workflows/ci.yml/badge.svg)
+
 Resilient multi-agent orchestration system built with LangGraph — featuring real SQLite-backed state checkpointing (genuine crash recovery, not simulated) and dynamic safety guardrails between agent steps.
 
 ## Why this exists
@@ -43,15 +45,6 @@ tests/unit/test_guardrail.py::test_safe_output_passes PASSED
 tests/unit/test_guardrail.py::test_unsafe_output_is_flagged PASSED
 tests/unit/test_guardrail.py::test_empty_output_is_safe PASSED
 tests/unit/test_guardrail.py::test_guardrail_node_blocks_status_on_unsafe_output PASSED
-```
-
-## Verified: Guardrail Actually Blocks Unsafe Output
-
-```
-tests/unit/test_guardrail.py::test_safe_output_passes PASSED
-tests/unit/test_guardrail.py::test_unsafe_output_is_flagged PASSED
-tests/unit/test_guardrail.py::test_empty_output_is_safe PASSED
-tests/unit/test_guardrail.py::test_guardrail_node_blocks_status_on_unsafe_output PASSED
 tests/unit/test_guardrail.py::test_guardrail_node_allows_safe_output PASSED
 ```
 
@@ -84,7 +77,6 @@ pytest tests/unit -v
 - [ ] Swap SQLite for Redis-backed checkpointing in production config
 - [ ] Replace rule-based planner/worker with real LLM calls
 - [ ] Plug in the trained toxicity/bias classifier from `sentinel-eval-gateway` as the guardrail model
-- [ ] Add CI/CD workflow (GitHub Actions) to run tests on every push
 - [ ] Add a `/resume` CLI command to explicitly resume a blocked or interrupted thread
 
 ## Author
